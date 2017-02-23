@@ -1,5 +1,7 @@
 <?php
 
+use Dingo\Api\Routing\Router;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,4 +15,9 @@
 
 $app->get('/', function () use ($app) {
     return $app->version();
+});
+
+$api = app(Router::class);
+$api->version('v1', function ($api) {
+    // Define your API routes here.
 });
